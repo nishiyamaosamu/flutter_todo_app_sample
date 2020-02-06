@@ -10,7 +10,7 @@ class IncompletedTodosScreen extends StatelessWidget {
     final model = Provider.of<TodoModel>(context, listen: true);
     return Scaffold(
       appBar: AppBar(
-        title: Text("All Todos"),
+        title: Text("Incompleted Todos"),
       ),
       body: TodoListView(list: model.incompletedTodoList),        
     );
