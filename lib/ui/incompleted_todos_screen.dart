@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/model/todo_model.dart';
+import 'package:todo_app/ui/parts/todo_list_tile.dart';
 
 class IncompletedTodosScreen extends StatelessWidget {
   IncompletedTodosScreen({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final model = Provider.of<TodoModel>(context, listen: true);
     return Scaffold(
         appBar: AppBar(
           title: Text("Incompleted Todos"),
         ),
         body: Center(
-          child: Text("IncompletedTodosScreen"),
+          child: ListView.builder(
+            itemBuilder: (BuildContext context, int index) {
+              var todo = model.incompletedTodoList[index];
+              return TodoListTile(todo: todo);
+            },
+              itemCount: model.incompletedTodoList.length,
+          ),
         ),
-        // floatingActionButton: WidgetBtn(),
     );
   }
 }

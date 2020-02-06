@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/entity/todo.dart';
 import 'package:todo_app/model/bottom_navigation_model.dart';
 import 'package:todo_app/model/todo_model.dart';
 
@@ -60,6 +61,22 @@ class MainBottomNavigation extends StatelessWidget {
           bottomNavigationModel.change(index);
         },
       ),
+      floatingActionButton: AddTodoButton(),
+    );
+  }
+}
+
+class AddTodoButton extends StatelessWidget {
+  const AddTodoButton({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final model = Provider.of<TodoModel>(context, listen: true);
+    return FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: () {
+        model.add(Todo(title: "test"));
+      },
     );
   }
 }
