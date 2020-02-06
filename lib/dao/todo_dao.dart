@@ -27,7 +27,6 @@ class TodoDao {
     return result;
   }
 
-  //not use this sample
   Future<int> delete(int id) async {
     final db = await dbProvider.database;
     var result = await db.delete(tableName, where: 'id = ?', whereArgs: [id]);

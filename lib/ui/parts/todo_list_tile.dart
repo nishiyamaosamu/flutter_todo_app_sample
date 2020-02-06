@@ -17,6 +17,7 @@ class TodoListTile extends StatelessWidget {
       child: ListTile(
         leading: _CheckBoxButton(todo: todo),
         title: Text(todo.title),
+        trailing: _RemoveButton(todo: todo),
       ),
     );
   }
@@ -25,7 +26,10 @@ class TodoListTile extends StatelessWidget {
 class _CheckBoxButton extends StatelessWidget {
   final Todo todo;
 
-  const _CheckBoxButton({Key key, @required this.todo}) : super(key: key);
+  const _CheckBoxButton({
+    Key key, 
+    @required this.todo,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,26 @@ class _CheckBoxButton extends StatelessWidget {
       onPressed: () {
         todo.isDone = !todo.isDone;
         model.update(todo);
+      },
+    );
+  }
+}
+
+class _RemoveButton extends StatelessWidget {
+  final Todo todo;
+
+  const _RemoveButton({
+    Key key, 
+    @required this.todo,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final model = Provider.of<TodoModel>(context, listen: true);
+    return FlatButton(
+      child: Icon(Icons.delete_forever),
+      onPressed: () {
+        model.remove(todo);
       },
     );
   }

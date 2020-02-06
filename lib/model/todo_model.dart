@@ -11,21 +11,27 @@ class TodoModel with ChangeNotifier{
   final TodoRepository repo = TodoRepository();
 
   TodoModel(){
-    fetchAll();
+    _fetchAll();
   }
 
-  void fetchAll() async {
+  void _fetchAll() async {
     _allTodoList = await repo.getAllTodos();
     notifyListeners();
   }
 
   void add(Todo todo) async {
     await repo.insertTodo(todo);
-    fetchAll();
+    _fetchAll();
   }
 
   void update(Todo todo) async {
     await repo.updateTodo(todo);
-    fetchAll();
+    _fetchAll();
   }
+
+  void remove(Todo todo) async {
+    await repo.deleteTodoById(todo.id);
+    _fetchAll();
+  }
+
 }

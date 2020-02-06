@@ -10,7 +10,6 @@ class TodoRepository {
 
   Future updateTodo(Todo todo) => todoDao.update(todo);
 
-  //not use this sample
   Future deleteTodoById(int id) => todoDao.delete(id);
 
   //not use this sample
