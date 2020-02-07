@@ -37,8 +37,7 @@ class _CheckBoxButton extends StatelessWidget {
     return FlatButton(
       child: todo.isDone ? Icon(Icons.check_box) : Icon(Icons.check_box_outline_blank),
       onPressed: () {
-        todo.isDone = !todo.isDone;
-        model.update(todo);
+        model.toggleIsDone(todo);
       },
     );
   }

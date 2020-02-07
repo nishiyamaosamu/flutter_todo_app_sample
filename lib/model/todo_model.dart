@@ -29,6 +29,11 @@ class TodoModel with ChangeNotifier{
     _fetchAll();
   }
 
+  void toggleIsDone(Todo todo) async {
+    todo.isDone = !todo.isDone;
+    update(todo);
+  }
+
   void remove(Todo todo) async {
     await repo.deleteTodoById(todo.id);
     _fetchAll();
