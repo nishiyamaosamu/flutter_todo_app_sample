@@ -1,16 +1,12 @@
 # todo_app
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+![demo](https://camo.qiitausercontent.com/77e5c125b729635e6c9bc9b7b79ea2aad1e5f5c9/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e61702d6e6f727468656173742d312e616d617a6f6e6177732e636f6d2f302f32343330382f39613234623832642d636165362d376264322d396538302d6535656162323132666663342e676966)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+package:provider/sqliteを使ったTODOアプリのサンプルです。
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+詳しくはこちらのQiitaにまとめてあります。
+
+[【Flutter】package:provider / sqlite を使ったTodoアプリサンプルでアーキテクチャ全体像を理解する](https://qiita.com/osamu1203/items/526a13d730500decf58c)
