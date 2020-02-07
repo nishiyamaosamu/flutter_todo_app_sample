@@ -5,14 +5,14 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DatabaseManager {
+class DatabaseService {
   static final _databaseVersion = 1;
   static final _databaseName = "todo.db";
 
   //tableName
   static final todoTableName = "todo";
   
-  static final DatabaseManager dbProvider = DatabaseManager();
+  static final DatabaseService dbProvider = DatabaseService();
 
   Database _database;
 

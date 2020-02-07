@@ -1,9 +1,9 @@
-import 'package:todo_app/database/database.dart';
+import 'package:todo_app/service/database.dart';
 import 'package:todo_app/entity/todo.dart';
 
 class TodoDao {
-  final dbProvider = DatabaseManager.dbProvider;
-  final tableName = DatabaseManager.todoTableName;
+  final dbProvider = DatabaseService.dbProvider;
+  final tableName = DatabaseService.todoTableName;
 
   Future<int> create(Todo todo) async {
     final db = await dbProvider.database;
